@@ -45,4 +45,4 @@ class Bookmark(db.Model):
         self.short_url = self.generate_short_characters()
 
     def __repr__(self) -> str:
-        return 'Boomark>>> {self.url}'
+        return 'Bookmark >>> {self.url}'

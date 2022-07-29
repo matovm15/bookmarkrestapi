@@ -4,12 +4,12 @@
 
 Create a virtualenv
 ```shell
-$virtualenv bookmark-env
+$virtualenv bucket-env
 ```
 
 Activate the environment
 ```shell
-$source bookmark-env/bin/activate
+$source bucket-env/bin/activate
 ```
 Install dependencies
 ```shell

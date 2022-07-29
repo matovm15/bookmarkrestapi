@@ -1,13 +1,13 @@
 template = {
   "swagger": "2.0",
   "info": {
-    "title": "Bookmarks API",
-    "description": "API for bookmarks",
+    "title": "BucketList API",
+    "description": "API for BucketLists",
     "contact": {
-      "responsibleOrganization": "ME",
-      "responsibleDeveloper": "Me",
-      "email": "test@example.com",
-      "url": "www.example.com",
+      "responsibleOrganization": "Matovu Moses",
+      "responsibleDeveloper": "Matovu Moses",
+      "email": "matovm@gmail.com",
+      "url": "matovm@gmail.com",
     },
     "termsOfService": "http://example.com/terms",
     "version": "1.0"

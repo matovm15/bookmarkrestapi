@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/flask
-# Edit at https://www.toptal.com/developers/gitignore?templates=flask
+# Created by github/matovm15/bookmarkrestapi
+
 
 ### Flask ###
 instance/*
@@ -146,4 +146,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# End of https://www.toptal.com/developers/gitignore/api/flask
+# End of https://www.github.com/matovm15/bookmarkrestapi

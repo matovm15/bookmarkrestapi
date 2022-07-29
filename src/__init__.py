@@ -2,8 +2,8 @@ import os
 from flask import Flask, redirect, jsonify
 from src.constants.http_status_codes import HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
 from src.auth import auth
-from src.bookmarks import bookmarks
-from src.database import db, Bookmark
+from src.buckets import buckets
+from src.database import db, buckets
 from flask_jwt_extended import JWTManager
 from flasgger import Swagger, swag_from
 from src.config.swagger import template, swagger_config
@@ -19,7 +19,7 @@ def create_app(test_config=None):
             SQLALCHEMY_TRACK_MODIFICATIONS=False,
             JWT_SECRET_KEY=os.environ.get('JWT_SECRET_KEY'),
             SWAGGER={
-                'title': "Bookmarks API",
+                'title': "CP2A - BucketList Application API",
                 'uiversions': 3
             }
         )
@@ -32,19 +32,19 @@ def create_app(test_config=None):
     JWTManager(app)
 
     app.register_blueprint(auth)
-    app.register_blueprint(bookmarks)
+    app.register_blueprint(buckets)
     Swagger(app, config=swagger_config, template=template)
 
-    @app.get('/<short_url>')
-    @swag_from('./docs/short_url.yml')
-    def redirect_to_url(short_url):
-        bookmark = Bookmark.query.filter_by(short_url=short_url).first_or_404()
+    # @app.get('/<short_url>')
+    # @swag_from('./docs/short_url.yml')
+    # def redirect_to_url(short_url):
+    #     bookmark = Bookmark.query.filter_by(short_url=short_url).first_or_404()
 
-        if bookmark:
-            bookmark.visits = bookmark.visits + 1
-            db.session.commit()
+    #     if bookmark:
+    #         bookmark.visits = bookmark.visits + 1
+    #         db.session.commit()
 
-            return redirect(bookmark.url)
+    #         return redirect(bookmark.url)
 
     @app.errorhandler(HTTP_404_NOT_FOUND)
     def handler_404(e):

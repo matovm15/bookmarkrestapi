@@ -1,10 +1,10 @@
 Redirect to a real  URL
 ---
 tags:
-  - Bookmarks
+  - BucketLists
 parameters:
   - in: path
-    name: short_url
+    name: bucket
     required: true
 
 response:
